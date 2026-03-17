@@ -67,6 +67,7 @@
 /* ===== Paso 3: Estilos base ===== */
 @layer base {
   html {
+    font-size: 18px;
     scroll-behavior: smooth;
   }
 

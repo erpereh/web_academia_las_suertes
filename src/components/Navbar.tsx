@@ -29,11 +29,11 @@ export default function Navbar() {
         scrolled ? 'shadow-lg shadow-lima/10' : ''
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 font-display text-xl font-bold tracking-tight sm:text-2xl">
-          {/* Icono logo: libro + estrella */}
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-lima text-lg text-blanco shadow-md shadow-lima/30">
+        <a href="#" className="flex items-center gap-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">
+          {/* Icono logo */}
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-lima text-xl text-blanco shadow-md shadow-lima/30">
             🚀
           </span>
           <span>
@@ -43,12 +43,12 @@ export default function Navbar() {
         </a>
 
         {/* Links desktop */}
-        <ul className="hidden items-center gap-6 lg:flex">
+        <ul className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="font-body text-sm font-semibold text-gris-texto transition-colors hover:text-lima"
+                className="font-body text-base font-semibold text-gris-texto transition-colors hover:text-lima"
               >
                 {link.label}
               </a>
@@ -57,22 +57,22 @@ export default function Navbar() {
         </ul>
 
         {/* CTA + Hamburger */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <a
             href="tel:914255687"
-            className="hidden items-center gap-2 rounded-full bg-lima px-5 py-2.5 font-display text-sm font-semibold text-blanco transition-all hover:bg-lima-dark hover:shadow-lg hover:shadow-lima/30 sm:flex"
+            className="hidden items-center gap-2 rounded-full bg-lima px-7 py-3.5 font-display text-base font-semibold text-blanco transition-all hover:bg-lima-dark hover:shadow-lg hover:shadow-lima/30 sm:flex"
           >
-            <Phone size={16} />
+            <Phone size={18} />
             Llámanos
           </a>
 
           {/* Hamburger mobile */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="rounded-lg p-2 text-negro transition-colors hover:bg-verde-suave lg:hidden"
+            className="rounded-lg p-2.5 text-negro transition-colors hover:bg-verde-suave lg:hidden"
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </nav>
@@ -87,13 +87,13 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden border-t border-border bg-blanco lg:hidden"
           >
-            <ul className="flex flex-col gap-1 px-4 py-4">
+            <ul className="flex flex-col gap-1 px-6 py-5">
               {links.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={handleLinkClick}
-                    className="block rounded-lg px-4 py-3 font-body font-semibold text-negro transition-colors hover:bg-verde-suave hover:text-lima"
+                    className="block rounded-lg px-4 py-3.5 font-body text-base font-semibold text-negro transition-colors hover:bg-verde-suave hover:text-lima"
                   >
                     {link.label}
                   </a>
@@ -103,9 +103,9 @@ export default function Navbar() {
                 <a
                   href="tel:914255687"
                   onClick={handleLinkClick}
-                  className="mt-2 flex items-center justify-center gap-2 rounded-full bg-lima px-5 py-3 font-display font-semibold text-blanco"
+                  className="mt-2 flex items-center justify-center gap-2 rounded-full bg-lima px-6 py-3.5 font-display text-base font-semibold text-blanco"
                 >
-                  <Phone size={16} />
+                  <Phone size={18} />
                   91 425 56 87
                 </a>
               </li>

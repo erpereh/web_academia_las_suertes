@@ -144,11 +144,11 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 mx-auto max-w-4xl px-4 text-center"
+        className="relative z-10 mx-auto max-w-5xl px-6 text-center"
       >
         <motion.h1
           variants={fadeUp}
-          className="font-display text-4xl font-bold leading-tight text-blanco sm:text-5xl md:text-6xl lg:text-7xl"
+          className="font-display text-5xl font-bold leading-tight text-blanco sm:text-6xl md:text-7xl lg:text-8xl"
         >
           Tu academia de confianza en{' '}
           <span className="text-lima">Vallecas</span>
@@ -156,27 +156,27 @@ export default function Hero() {
 
         <motion.p
           variants={fadeUp}
-          className="mx-auto mt-6 max-w-2xl font-body text-lg text-blanco/80 sm:text-xl md:text-2xl"
+          className="mx-auto mt-8 max-w-2xl font-body text-xl text-blanco/80 sm:text-2xl md:text-3xl"
         >
           <TypingEffect /> para Primaria, ESO y Bachillerato
         </motion.p>
 
         <motion.div
           variants={fadeUp}
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row"
         >
           <a
             href="tel:914255687"
-            className="flex items-center gap-2 rounded-full bg-lima px-8 py-4 font-display text-lg font-bold text-blanco shadow-xl shadow-lima/30 transition-all hover:scale-105 hover:bg-lima-dark hover:shadow-2xl hover:shadow-lima/40"
+            className="flex items-center gap-3 rounded-full bg-lima px-10 py-5 font-display text-xl font-bold text-blanco shadow-xl shadow-lima/30 transition-all hover:scale-105 hover:bg-lima-dark hover:shadow-2xl hover:shadow-lima/40"
           >
-            <Phone size={20} />
+            <Phone size={24} />
             Llámanos ahora
           </a>
           <a
             href="mailto:info@academialassuertes.es"
-            className="flex items-center gap-2 rounded-full border-2 border-blanco/40 px-8 py-4 font-display text-lg font-bold text-blanco backdrop-blur-sm transition-all hover:scale-105 hover:border-blanco hover:bg-blanco/10"
+            className="flex items-center gap-3 rounded-full border-2 border-blanco/40 px-10 py-5 font-display text-xl font-bold text-blanco backdrop-blur-sm transition-all hover:scale-105 hover:border-blanco hover:bg-blanco/10"
           >
-            <Mail size={20} />
+            <Mail size={24} />
             Escríbenos
           </a>
         </motion.div>

@@ -34,7 +34,7 @@ const cardVariant = {
 
 function AnimatedStarRating({ count, hovered }: { count: number; hovered: boolean }) {
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1.5">
       {Array.from({ length: 5 }, (_, i) => (
         <motion.div
           key={i}
@@ -42,7 +42,7 @@ function AnimatedStarRating({ count, hovered }: { count: number; hovered: boolea
           transition={{ ...spring, delay: hovered ? i * 0.05 : 0 }}
         >
           <Star
-            size={18}
+            size={22}
             className={i < count ? 'fill-naranja text-naranja' : 'text-gris-claro'}
           />
         </motion.div>
@@ -53,17 +53,17 @@ function AnimatedStarRating({ count, hovered }: { count: number; hovered: boolea
 
 export default function Opiniones() {
   return (
-    <section id="opiniones" className="bg-blanco py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section id="opiniones" className="bg-blanco py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6">
         {/* Título */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-6 text-center"
+          className="mb-8 text-center"
         >
-          <h2 className="font-display text-3xl font-bold text-negro sm:text-4xl md:text-5xl">
+          <h2 className="font-display text-4xl font-bold text-negro sm:text-5xl md:text-6xl">
             Lo que dicen <span className="text-lima">nuestras familias</span>
           </h2>
         </motion.div>
@@ -74,19 +74,19 @@ export default function Opiniones() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="mb-14 flex items-center justify-center gap-3"
+          className="mb-16 flex items-center justify-center gap-4"
         >
-          <div className="flex gap-0.5">
+          <div className="flex gap-1">
             {Array.from({ length: 5 }, (_, i) => (
               <Star
                 key={i}
-                size={22}
+                size={26}
                 className={i < 4 ? 'fill-naranja text-naranja' : 'fill-naranja/40 text-naranja/40'}
               />
             ))}
           </div>
-          <span className="font-display text-xl font-bold text-negro">4.3</span>
-          <span className="font-body text-gris-texto">sobre 6 reseñas en Google</span>
+          <span className="font-display text-2xl font-bold text-negro">4.3</span>
+          <span className="font-body text-lg text-gris-texto">sobre 6 reseñas en Google</span>
         </motion.div>
 
         {/* Cards */}
@@ -95,7 +95,7 @@ export default function Opiniones() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid gap-6 md:grid-cols-3"
+          className="grid gap-8 md:grid-cols-3"
         >
           {reseñas.map((r) => (
             <OpinionCard key={r.nombre} {...r} />
@@ -122,14 +122,14 @@ function OpinionCard({ nombre, estrellas, texto }: (typeof reseñas)[0]) {
         backgroundColor: hovered ? 'rgb(255, 255, 255)' : 'rgb(240, 249, 232)',
       }}
       transition={spring}
-      className="rounded-2xl p-6 shadow-sm"
+      className="rounded-2xl p-8 shadow-sm"
     >
       <AnimatedStarRating count={estrellas} hovered={hovered} />
-      <p className="mt-4 font-body leading-relaxed text-gris-texto">
+      <p className="mt-5 font-body text-base leading-relaxed text-gris-texto">
         &ldquo;{texto}&rdquo;
       </p>
       <p
-        className={`mt-4 font-display font-bold transition-colors duration-200 ${
+        className={`mt-5 font-display text-lg font-bold transition-colors duration-200 ${
           hovered ? 'text-lima' : 'text-negro'
         }`}
       >

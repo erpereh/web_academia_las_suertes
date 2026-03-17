@@ -70,23 +70,23 @@ export default function PorQueElegirnos() {
   const isInView = useInView(counterRef, { once: true, margin: '-100px' })
 
   return (
-    <section id="por-que" className="bg-verde-suave py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section id="por-que" className="bg-verde-suave py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6">
         {/* Título */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-20 text-center"
         >
-          <h2 className="font-display text-3xl font-bold text-negro sm:text-4xl md:text-5xl">
+          <h2 className="font-display text-4xl font-bold text-negro sm:text-5xl md:text-6xl">
             ¿Por qué <span className="text-lima">elegirnos</span>?
           </h2>
         </motion.div>
 
         {/* Contadores animados */}
-        <div ref={counterRef} className="mb-16 grid gap-8 sm:grid-cols-3">
+        <div ref={counterRef} className="mb-20 grid gap-10 sm:grid-cols-3">
           {stats.map((stat) => (
             <CounterCard key={stat.label} {...stat} enabled={isInView} />
           ))}
@@ -133,12 +133,12 @@ function RazonCard({ razon, index }: { razon: (typeof razones)[0]; index: number
       <motion.div
         animate={hovered ? { scale: [1, 1.2, 1] } : { scale: 1 }}
         transition={{ ...spring, duration: 0.4 }}
-        className={`mb-4 inline-flex rounded-xl p-3 ${iconColor}`}
+        className={`mb-5 inline-flex rounded-xl p-4 ${iconColor}`}
       >
-        <razon.icon size={32} />
+        <razon.icon size={36} />
       </motion.div>
-      <h3 className="font-display text-xl font-bold text-negro">{razon.title}</h3>
-      <p className="mt-3 font-body leading-relaxed text-gris-texto">{razon.desc}</p>
+      <h3 className="font-display text-2xl font-bold text-negro">{razon.title}</h3>
+      <p className="mt-3 font-body text-base leading-relaxed text-gris-texto">{razon.desc}</p>
     </motion.div>
   )
 }
@@ -163,11 +163,11 @@ function CounterCard({
       transition={{ duration: 0.5, type: 'spring' }}
       className="text-center"
     >
-      <Icon size={36} className={`mx-auto mb-2 ${color}`} />
-      <p className={`font-display text-5xl font-bold sm:text-6xl ${color}`}>
+      <Icon size={44} className={`mx-auto mb-3 ${color}`} />
+      <p className={`font-display text-6xl font-bold sm:text-7xl ${color}`}>
         {displayValue}{suffix}
       </p>
-      <p className="mt-2 font-body text-lg text-gris-texto">{label}</p>
+      <p className="mt-3 font-body text-xl text-gris-texto">{label}</p>
     </motion.div>
   )
 }
