@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/* ===== Paso 1: Variables CSS en :root (con hsl() wrapper) ===== */
+:root {
+  --lima: hsl(90 56% 51%);
+  --lima-light: hsl(90 56% 60%);
+  --lima-dark: hsl(90 56% 40%);
+  --naranja: hsl(18 100% 60%);
+  --naranja-light: hsl(18 100% 70%);
+  --negro: hsl(233 36% 14%);
+  --blanco: hsl(0 0% 100%);
+  --verde-suave: hsl(100 60% 95%);
+  --verde-oscuro: hsl(100 52% 20%);
+  --gris-texto: hsl(220 10% 40%);
+  --gris-claro: hsl(220 10% 96%);
+
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(233 36% 14%);
+  --primary: hsl(90 56% 51%);
+  --primary-foreground: hsl(0 0% 100%);
+  --accent: hsl(18 100% 60%);
+  --accent-foreground: hsl(0 0% 100%);
+  --muted: hsl(100 60% 95%);
+  --muted-foreground: hsl(220 10% 40%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(233 36% 14%);
+  --border: hsl(220 10% 90%);
+  --ring: hsl(90 56% 51%);
+  --radius: 1rem;
+}
+
+/* ===== Paso 2: Mapear variables a utilidades de Tailwind ===== */
+@theme inline {
+  --color-lima: var(--lima);
+  --color-lima-light: var(--lima-light);
+  --color-lima-dark: var(--lima-dark);
+  --color-naranja: var(--naranja);
+  --color-naranja-light: var(--naranja-light);
+  --color-negro: var(--negro);
+  --color-blanco: var(--blanco);
+  --color-verde-suave: var(--verde-suave);
+  --color-verde-oscuro: var(--verde-oscuro);
+  --color-gris-texto: var(--gris-texto);
+  --color-gris-claro: var(--gris-claro);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-display: "Fredoka", sans-serif;
+  --font-body: "Nunito", sans-serif;
+}
+
+/* ===== Paso 3: Estilos base ===== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+/* ===== Wave divider animación ===== */
+@keyframes wave-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-wave {
+  animation: wave-scroll 12s linear infinite;
+}
+
+/* ===== Bobbing para nave flotante ===== */
+@keyframes bobbing {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+.animate-bobbing {
+  animation: bobbing 3s ease-in-out infinite;
+}
+
+/* ===== Typing cursor ===== */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
